@@ -35,7 +35,6 @@ def offer_tool():
             level += 1
             print(f'You bought the {levels[level -1].tool}. You now have ${money} left. You can start making {levels[level -1].pay} per day. ')
 
-
 #Function that updates the day and the earned cash from work and sends a message where we at.
 def update(x):
     global day,money
@@ -50,19 +49,13 @@ def update(x):
 
     offer_tool()
     
- 
 # Gives an option to the user whether they wanna carry on with the work.
 # If the answer is yes, the function updates the global variable which 
 # allows the game to continue in the while loop.
 def choice():
-    quest = input('Do you wanna work? y/n ').lower()
     global wanna_work
-    if quest == 'y':
-        wanna_work = 'y'
-    elif quest == 'n':
-        wanna_work = 'n'
-      
-
+    wanna_work = input('Do you wanna work? y/n ').lower()
+   
 while money < 1000:
   choice()
   if wanna_work == 'y':
@@ -70,5 +63,4 @@ while money < 1000:
   elif wanna_work == 'n':
       print('Youre a loser go back and work hard')
       
-
 print("Hard work pays off! Now youre a trillionaire! 💰")
